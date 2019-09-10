@@ -1,9 +1,6 @@
 cc_library_shared {
     name: "libstagefright_shim",
-<<<<<<< HEAD
-=======
     proprietary: true,
->>>>>>> c5f14aa... universal7580: libshims: convert libstagefright_shim to Android.bp
     
     srcs: [
         "CameraSource.cpp",
