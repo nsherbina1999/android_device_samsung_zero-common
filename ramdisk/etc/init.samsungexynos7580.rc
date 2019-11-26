@@ -775,7 +775,7 @@ on fs
     chown system radio /sys/class/sensors/irled_remote/irled_send_result
 
 # GPS
-service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+service gpsd /vendor/bin/gpsd -c /system/etc/gps.xml
     class main
     user gps
     group system wakelock inet net_raw
@@ -807,6 +807,17 @@ on charger
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
+
+# DRK/CS service
+service cs_service /vendor/bin/cs
+    class main
+    user system
+    group system
+    disabled
+
+on property:sys.mobicoredaemon.enable=true
+    start cs_service
+    write /proc/iccc_ready 1
 
 service sswap /vendor/bin/sswap -s -f 1024
       class core
