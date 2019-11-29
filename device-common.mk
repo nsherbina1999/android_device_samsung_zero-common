@@ -165,7 +165,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcamera_client_shim \
     libexynoscamera_shim \
-    libExynosOMX_shim \
     libstagefright_shim \
     libui_shim
 
@@ -195,7 +194,13 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf \
-    android.hardware.wifi@1.0-service.legacy
+    android.hardware.wifi@1.0-service \
+    android.hardware.wifi@1.0 \
+    android.hardware.wifi@1.0-impl
+
+# Overriden service definition
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
 
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
