@@ -18,6 +18,9 @@ lib/libfloatingfeature.so
 # Graphics
 vendor/lib/egl/libGLES_mali.so
 
+# Mobicore
+bin/cs
+
 # protobuf
 # precompiled from https://gitlab.com/Exynos7580/android_external_protobuf-compat-2.6
 # its the android N protobuf library slightly modified to avoid colissions with the incompatible
