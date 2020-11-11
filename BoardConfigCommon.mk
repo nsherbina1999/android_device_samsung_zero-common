@@ -70,6 +70,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Exclude AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
+
 # Extended filesystem support
 TARGET_EXFAT_DRIVER := sdfat
 
@@ -176,12 +179,9 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
 BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy 
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/libui_shim.so \
-    /system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib/libui_shim.so \
-    /system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib/libui_shim.so \
-    /system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib/libui_shim.so \
-    /system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib/libui_shim.so \
-    /system/lib/omx/libOMX.Exynos.VP8.Encoder.so|/vendor/lib/libui_shim.so \
-    /system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib/libui_shim.so
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
+# Shim
+TARGET_LD_SHIM_LIBS += \
+    /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so

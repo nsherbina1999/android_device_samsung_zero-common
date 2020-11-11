@@ -102,6 +102,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
 
+# Mobicore
+PRODUCT_PACKAGES += \
+    mcDriverDaemon \
+    libMcClient \
+    libMcRegistry
+
 # Power
 PRODUCT_PACKAGES += \
     power.universal7580 \
@@ -183,23 +189,14 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf \
-    android.hardware.wifi@1.0-service \
-    android.hardware.wifi@1.0 \
-    android.hardware.wifi@1.0-impl
-
-# Overriden service definition
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc \
-    $(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
+    android.hardware.wifi@1.0-service.legacy
 
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
 # call Samsung LSI board support package
-ifneq ($(WITH_EXYNOS_BSP),)
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi/exynos7580/exynos7580.mk)
-endif
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal7580-common/universal7580-common-vendor.mk)
