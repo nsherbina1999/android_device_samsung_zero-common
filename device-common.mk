@@ -14,13 +14,13 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/universal7580-common
+LOCAL_PATH := device/samsung/universal7420-common
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.universal7580 \
+    audio.primary.universal7420 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl.7580 \
+    android.hardware.bluetooth@1.0-impl.7420 \
     libbt-vendor
 
 # Camera
@@ -135,14 +135,14 @@ PRODUCT_COPY_FILES += \
 # ramdisk
 PRODUCT_PACKAGES += \
     init.power.rc \
-    fstab.samsungexynos7580 \
+    fstab.samsungexynos7420 \
     init.baseband.rc \
     init.samsung.rc \
-    init.samsungexynos7580.rc \
-    init.samsungexynos7580.usb.rc \
-    init.recovery.samsungexynos7580.rc \
+    init.samsungexynos7420.rc \
+    init.samsungexynos7420.usb.rc \
+    init.recovery.samsungexynos7420.rc \
     init.wifi.rc \
-    ueventd.samsungexynos7580.rc
+    ueventd.samsungexynos7420.rc
 
 # RenderScript
 PRODUCT_PACKAGES += \
@@ -208,7 +208,7 @@ PRODUCT_PACKAGES += \
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos7580/exynos7580.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos7420/exynos7420.mk)
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/universal7580-common/universal7580-common-vendor.mk)
+$(call inherit-product, vendor/samsung/universal7420-common/universal7420-common-vendor.mk)

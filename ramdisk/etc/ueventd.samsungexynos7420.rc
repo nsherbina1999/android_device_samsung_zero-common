@@ -102,7 +102,7 @@
 /dev/s5p-smem             0660   media      system
 
 # Modem Interface
-/dev/block/platform/13540000.dwmmc0/by-name/RADIO     0660   system     radio
+/dev/block/platform/15570000.ufs/by-name/RADIO     0660   system     radio
 /dev/umts*                0660   system     radio
 
 # Blowfish
@@ -114,8 +114,8 @@
 # Sensorhub IIO
 /dev/ssp_sensorhub        0660   system        system
 /dev/iio:device*          0660   system        system
-/sys/devices/13910000.spi/spi_master/spi0/spi0.0/iio:device*    buffer/enable       0660    system    system
-/sys/devices/13910000.spi/spi_master/spi0/spi0.0/iio:device*    buffer/length       0660    system    system
+/sys/devices/14d30000.spi/spi_master/spi1/spi1.0/iio:device*    buffer/enable       0660    system    system
+/sys/devices/14d30000.spi/spi_master/spi1/spi1.0/iio:device*    buffer/length       0660    system    system
 /sys/bus/iio/devices/iio:device*    *    0664   system     radio
 
 # Dynamic Cluster Hotplug
@@ -147,12 +147,12 @@
 /sys/class/input/input8 enabled 0664    system  system
 
 # Mali Device
-/sys/devices/11400000.mali  power_policy    0644    system  system
-/sys/devices/11400000.mali  dvfs_table      0644    radio   system
-/sys/devices/11400000.mali  dvfs_min_lock   0644    radio   system
-/sys/devices/11400000.mali  dvfs_max_lock   0644    radio   system
-/sys/devices/11400000.mali  highspeed_clock 0644    radio   system
-/sys/devices/11400000.mali  highspeed_load  0644    radio   system
+/sys/devices/14ac0000.mali  power_policy    0644    system  system
+/sys/devices/14ac0000.mali  dvfs_table      0644    radio   system
+/sys/devices/14ac0000.mali  dvfs_min_lock   0644    radio   system
+/sys/devices/14ac0000.mali  dvfs_max_lock   0644    radio   system
+/sys/devices/14ac0000.mali  highspeed_clock 0644    radio   system
+/sys/devices/14ac0000.mali  highspeed_load  0644    radio   system
 
 /sys/class/devfreq/17000020.bus_mif available_frequencies   0644    radio   system
 /sys/class/devfreq/17000020.bus_mif min_freq                0644    radio   system
@@ -177,10 +177,10 @@
 /sys/module/workqueue   parameters/power_efficient  0664    system  system
 
 # Audio NXP AMP
-/dev/i2c-20                0660   system     system
+/dev/i2c-2                0660   system     system
 
 # Google FRP solution
-/dev/block/platform/13540000.dwmmc0/by-name/PERSISTENT    0660    system    system
+/dev/block/platform/15570000.ufs/by-name/PERSISTENT    0660    system    system
 
 # MobiCore
 /dev/mobicore             0700   system     system

@@ -6,7 +6,7 @@
 /dev/bcm2079x                u:object_r:nfc_device:s0
 /dev/sec-nfc                 u:object_r:nfc_device:s0
 
-/dev/ttySAC3                 u:object_r:bluetooth_device:s0
+/dev/ttySAC4                 u:object_r:bluetooth_device:s0
 
 /dev/s5p-smem                u:object_r:secmem_device:s0
 /dev/mobicore                u:object_r:tee_device:s0
@@ -125,7 +125,7 @@
 /sys/class/sec/gps                                  u:object_r:sysfs_gps:s0
 /sys/devices/soc0/machine                           u:object_r:sysfs_gps:s0
 /sys/devices/soc0/revision                          u:object_r:sysfs_gps:s0
-/sys/devices/139c0000.pinctrl/gpio/gpio137/value    u:object_r:sysfs_gps:s0
+/sys/devices/14c90000.pinctrl/gpio/gpio137/value    u:object_r:sysfs_gps:s0
 
 # rild
 /sys/devices/virtual/misc/multipdp(/.*)     u:object_r:sysfs_multipdp:s0
@@ -141,7 +141,7 @@
 
 # Lights
 /sys/devices/virtual/sec/sec_touchkey/brightness        u:object_r:sysfs_light:s0
-/sys/devices/14800000.dsim/backlight/panel(/.*)?        u:object_r:sysfs_light:s0
+/sys/devices/13900000.dsim/backlight/panel(/.*)?        u:object_r:sysfs_light:s0
 /sys/class/leds(/.*)?                                   u:object_r:sysfs_light:s0
 /sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_light:s0
 /sys/class/lcd/panel/power_reduce                       u:object_r:sysfs_light:s0

@@ -17,7 +17,7 @@
 /*
  * Camera HAL "CallbackWorkerThread" workaround description
  *
- * The camera HAL of the Exynos7580 (A3, A5, ... 2016) reguralry deadlocks when using
+ * The camera HAL of the Exynos7420 (S6, S6 Edge) reguralry deadlocks when using
  * most camera apps, this happens a lot when using Google Camera but does occur
  * occasionally in Snap.
  *

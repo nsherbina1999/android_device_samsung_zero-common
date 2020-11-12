@@ -21,7 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610
+    ro.opengles.version=196609
 
 # HWC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -43,7 +43,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Factory Reset Protection
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/platform/13540000.dwmmc0/by-name/PERSISTENT
+    ro.frp.pst=/dev/block/platform/15570000.ufs/by-name/PERSISTENT
 
 # Network
 # Define default initial receive window size in segments.

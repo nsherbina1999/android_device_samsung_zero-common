@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/universal7580-common
+LOCAL_PATH := device/samsung/universal7420-common
 BUILD_TOP := $(shell pwd)
 
 BUILD_BROKEN_DUP_RULES := true
@@ -33,16 +33,26 @@ TARGET_NO_RADIOIMAGE := true
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := bsp
-TARGET_SOC := exynos7580
-TARGET_BOOTLOADER_BOARD_NAME := universal7580
+TARGET_SOC := exynos7420
+TARGET_BOOTLOADER_BOARD_NAME := universal7420
 BOARD_VENDOR := samsung
 
 # CPU
-TARGET_ARCH := arm
+TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_ABI := armeabi-v8a
+TARGET_CPU_ABI2 := 
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := cortex-a57
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
+
+TARGET_NR_CPUS := 8
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
@@ -53,14 +63,14 @@ TARGET_USES_64_BIT_BINDER := true
 # Extracted with libbootimg
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x10008000 --ramdisk_offset 0x11000000 --tags_offset 0x10000100
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_IMAGE_NAME := Image
 #BOARD_KERNEL_CMDLINE := The bootloader ignores the cmdline from the boot.img
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
-BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
+BOARD_ROOT_EXTRA_FOLDERS += efs
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Kernel
@@ -70,7 +80,7 @@ KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-li
 TARGET_LINUX_KERNEL_VERSION := 3.10
 
 # Kernel config
-TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
+TARGET_KERNEL_SOURCE := kernel/samsung/universal7420
 
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -174,11 +184,13 @@ BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7420
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy 
+BOARD_SEPOLICY_DIRS += device/samsung/universal7420-common/sepolicy 
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
+SELINUX_IGNORE_NEVERALLOWS := true
+
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)

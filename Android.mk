@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/universal7580-common
+LOCAL_PATH := device/samsung/universal7420-common
 
-ifneq ($(filter a3xelte a5xelte a7xelte gvwifi gvlte j7elte s5neolte, $(TARGET_DEVICE)),)
+ifneq ($(filter zerolte zeroflte zeroltexx zerofltexx, $(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

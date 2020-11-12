@@ -1,4 +1,4 @@
-# all unpinned blobs come from SM-A510F stock (nougat)
+# all unpinned blobs come from SM-G920F stock (nougat)
 
 # aptX - from marlin - OPM1.171019.011
 lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
@@ -11,7 +11,7 @@ lib/libsensorlistener.so
 # GPS
 bin/gpsd:vendor/bin/gpsd
 bin/gps.cer:vendor/bin/gps.cer
-lib/hw/gps.default.so:lib/hw/gps.universal7580.so
+lib/hw/gps.default.so:lib/hw/gps.universal7420.so
 lib/libwrappergps.so
 lib/libfloatingfeature.so
 
